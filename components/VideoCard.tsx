@@ -31,6 +31,9 @@ export function VideoCard({ video }: { video: VideoCardType }) {
         <h3 className="mt-1 text-lg font-semibold text-white">
           {video.title}
         </h3>
+        {video.role && (
+          <p className="mt-1 text-xs text-white/50">{video.role}</p>
+        )}
         <span className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#2dd4bf]">
           Watch Video →
         </span>
