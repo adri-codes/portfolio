@@ -3,9 +3,17 @@ export type VideoCard = {
   event: string;
   type: string;
   href: string;
+  role?: string;
 };
 
 export const videos: VideoCard[] = [
+  {
+    title: "Noli Me Tangere",
+    event: "OLFU Medical Technology Students",
+    type: "Film Adaptation",
+    href: "https://www.facebook.com/share/v/1976Gw26t5/",
+    role: "Videographer & Editor",
+  },
   {
     title: "ERG Anniversary Teaser",
     event: "Engineering Radio Guild Anniversary",

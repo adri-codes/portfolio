@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# session-local Claude Code state
+.claude/scheduled_tasks.lock
+
 # personal documents (resume PDFs contain phone number/home address — not for the public repo)
 /Document Resources
 
