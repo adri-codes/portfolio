@@ -19,6 +19,7 @@ export function ProjectCard({
     >
       <ProjectVisual
         name={project.name}
+        cover={project.cover}
         className={featured ? "h-40 sm:h-48" : "h-28"}
       />
 

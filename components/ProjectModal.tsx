@@ -62,7 +62,11 @@ export function ProjectModal({
           </button>
         </div>
 
-        <ProjectVisual name={project.name} className="mt-6 h-40" />
+        <ProjectVisual
+          name={project.name}
+          cover={project.cover}
+          className="mt-6 h-40"
+        />
 
         <div className="mt-6 space-y-5">
           <div>

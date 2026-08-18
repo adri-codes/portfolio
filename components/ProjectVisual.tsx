@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const initialsOf = (name: string) =>
   name
     .split(" ")
@@ -9,11 +11,29 @@ const initialsOf = (name: string) =>
 
 export function ProjectVisual({
   name,
+  cover,
   className = "",
 }: {
   name: string;
+  cover?: string;
   className?: string;
 }) {
+  if (cover) {
+    return (
+      <div
+        className={`relative overflow-hidden rounded-lg border border-border bg-accent-soft ${className}`}
+      >
+        <Image
+          src={cover}
+          alt={`Screenshot of the ${name} live site`}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 640px) 100vw, 50vw"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={`relative flex items-center justify-center overflow-hidden rounded-lg border border-border bg-accent-soft ${className}`}

@@ -16,6 +16,9 @@ export type Project = {
   features: string[];
   links: ProjectLink[];
   featured: boolean;
+  // Screenshot of the live site, shown as the card/modal cover. Omit if there's
+  // no live site to screenshot (falls back to the abstract initials visual).
+  cover?: string;
 };
 
 export const featuredProjects: Project[] = [
@@ -57,9 +60,10 @@ export const featuredProjects: Project[] = [
     ],
     links: [
       { label: "GitHub", href: null },
-      { label: "Live Demo", href: null },
+      { label: "Live Demo", href: "https://upd-eats.vercel.app" },
     ],
     featured: true,
+    cover: "/covers/upd-eats.png",
   },
   {
     slug: "tac-quotes",
@@ -97,6 +101,7 @@ export const featuredProjects: Project[] = [
       { label: "Live Demo", href: null },
     ],
     featured: true,
+    cover: "/covers/tac-quotes.png",
   },
 ];
 
@@ -124,6 +129,7 @@ export const otherProjects: Project[] = [
       { label: "Visit Site", href: "https://11dprudence.wixsite.com/11dprudencebcal" },
     ],
     featured: false,
+    cover: "/covers/math-tutorial.png",
   },
   {
     slug: "price-list-database",

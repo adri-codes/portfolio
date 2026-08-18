@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Play } from "lucide-react";
 import { VideoCard as VideoCardType } from "@/data/videos";
 
@@ -9,14 +10,32 @@ export function VideoCard({ video }: { video: VideoCardType }) {
       rel="noopener noreferrer"
       className="group relative flex aspect-[4/5] flex-col overflow-hidden rounded-xl border border-white/10 bg-[#151312] p-5 transition-transform hover:-translate-y-1"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,212,191,0.18),transparent_55%)]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:20px_20px] opacity-40"
-      />
+      {video.cover ? (
+        <>
+          <Image
+            src={video.cover}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 640px) 50vw, 25vw"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/50"
+          />
+        </>
+      ) : (
+        <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,212,191,0.18),transparent_55%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:20px_20px] opacity-40"
+          />
+        </>
+      )}
 
       <span className="relative w-fit shrink-0 rounded-full border border-white/15 px-2.5 py-1 font-mono text-[10px] tracking-widest text-white/60 uppercase">
         {video.type}
