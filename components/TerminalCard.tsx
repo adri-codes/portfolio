@@ -54,15 +54,15 @@ export function TerminalCard() {
 
   return (
     <div
-      className="w-full max-w-sm overflow-hidden rounded-xl border border-border bg-[#151312] shadow-sm"
+      className="w-full max-w-sm overflow-hidden rounded-xl border border-border bg-card shadow-xl"
       role="img"
       aria-label="Terminal showing: who am I — Adriane, CE student, UP Diliman. Status now — building, learning, shipping. Stack — Next.js, TypeScript, Supabase, Python. Editing tool — Premiere Pro, CapCut."
     >
-      <div className="flex items-center gap-1.5 border-b border-white/10 px-4 py-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-        <span className="ml-2 font-mono text-xs text-white/40">
+      <div className="flex items-center gap-1.5 border-b border-border px-4 py-3">
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+        <span className="h-2.5 w-2.5 rounded-full bg-foreground/15" />
+        <span className="ml-2 font-mono text-xs text-muted">
           adriane@portfolio
         </span>
       </div>
@@ -72,24 +72,24 @@ export function TerminalCard() {
       >
         {lines.slice(0, visibleLines).map((line) => (
           <div key={line.prompt}>
-            <div className="text-white/50">
-              <span className="text-[#2dd4bf]">$</span> {line.prompt}
+            <div className="text-muted-foreground">
+              <span className="text-accent">$</span> {line.prompt}
             </div>
-            <div className="text-white/85">{line.output}</div>
+            <div className="text-foreground">{line.output}</div>
           </div>
         ))}
         {typingLine && (
           <div>
-            <div className="text-white/50">
-              <span className="text-[#2dd4bf]">$</span>{" "}
+            <div className="text-muted-foreground">
+              <span className="text-accent">$</span>{" "}
               {typingLine.prompt.slice(0, charCount)}
               <span className="animate-pulse">▍</span>
             </div>
           </div>
         )}
         {visibleLines >= lines.length && (
-          <div className="pt-1 text-white/50">
-            <span className="text-[#2dd4bf]">$</span>{" "}
+          <div className="pt-1 text-muted-foreground">
+            <span className="text-accent">$</span>{" "}
             <span className="animate-pulse">▍</span>
           </div>
         )}
