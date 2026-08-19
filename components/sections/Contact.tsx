@@ -14,7 +14,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 sm:py-28">
       <Container>
-        <SectionHeading index="07" title="Contact" />
+        <SectionHeading index="08" title="Contact" />
 
         <div className="rounded-xl border border-border bg-card px-6 py-14 text-center sm:px-12">
           <h3 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
